@@ -12,22 +12,22 @@ DATABASE_URL = suaURLdoMongoDBCluster
 node_modules/
 .env
 observação: 
-I. o node_modules é a pasta criada com todas as bibliotecas do seu projeto. 
-II. o .env consta o seu drive do mongodb com o login e senha.
-6. Execute o comando no terminal abaixo para instalar todas as dependências (node_modules)
+a) o node_modules é a pasta criada com todas as bibliotecas do seu projeto.
+b) o .env consta o seu drive do mongodb com o login e senha.
+7. Execute o comando no terminal abaixo para instalar todas as dependências (node_modules)
 npm install
 
-7. Rode o projeto no terminal
+8. Rode o projeto no terminal
 npm run dev
 
-8. Abra o browser de sua preferência (Chrome, Firefox, Opera, etc) e coloque a rota abaixo
+9. Abra o browser de sua preferência (Chrome, Firefox, Opera, etc) e coloque a rota abaixo
 localhost:3001/index 
 
-9. No arquivo indexEmmet.ejs consta alguns exemplos de emmet.
+10. No arquivo indexEmmet.ejs consta alguns exemplos de emmet.
 
-10. Algumas rotas:
-I. localhost:3001/ler
-II. localhost:3001/emmet
-III. localhost:3001/index (página inicial)
-IV. localhost:3001/show (com os métodos post e get)
-V. localhost:3001/edit/:id (adicionar no lugar dos :id o id do mongodb que será alterado)
+11. Algumas rotas:
+a) localhost:3001/ler
+b) localhost:3001/emmet
+c) localhost:3001/index (página inicial)
+d) localhost:3001/show (com os métodos post e get)
+e) localhost:3001/edit/:id (adicionar no lugar dos :id o id do mongodb que será alterado)
