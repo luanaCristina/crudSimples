@@ -8,17 +8,27 @@
 
     <body>
         <h2>Editar Registro</h2>
-        <% crud.forEach(function(details) { %>
-            <form action="/edit/<%= details._id %>" method="POST">
-                <input type="text" value="<%= details.name %>" name="name">
-                <input type="text" value="<%= details.surname %>" name="surname">
+
+        <%# 1. Verificamos se o 'crud' (o registro) foi encontrado %>
+        <% if (crud) { %>
+
+            <%# 2. Usamos 'crud' diretamente, sem loop (.forEach) %>
+            <form action="/edit/<%= crud._id %>" method="POST">
+                <input type="text" value="<%= crud.name %>" name="name">
+                <input type="text" value="<%= crud.surname %>" name="surname">
                 <br/>
-                <button>
-                <a href="/show">Ver Todos os Registros</a>
-                </button>
+                <br/>
+                
+                <%# 3. Corrigi o botão "Todos" para ser um link normal %>
+                <a href="/show">Ver Todos</a>
                 <button type="submit">Editar</button>
             </form>
-        <% }) %>
-    </body>
 
+        <% } else { %>
+            <%# Caso o ID não exista no banco %>
+            <p>Registro não encontrado.</p>
+            <a href="/show">Voltar para a lista</a>
+        <% } %>
+
+    </body>
 </html>
