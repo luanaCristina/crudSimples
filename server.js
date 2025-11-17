@@ -30,10 +30,11 @@ app.use('/img', express.static(__dirname +'public/img'))
 
 //para rodar no Render.com ou local
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+const HOST = '0.0.0.0'; //adicione essa linha para o Render.com
 
+app.listen(PORT, HOST, () => { // <-- ADICIONE O 'HOST' AQUI para o Render.com
+  console.log(`Servidor rodando em http://${HOST}:${PORT}`);
+});
 app.get("/ler", (requisition, resposta)=> {
     resposta.send("olá gente!")
 })
