@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Meu editar</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Meu editar</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
     </head>
 
-    <body>
-        <h2>Editar Registro</h2>
+<body>
 
-        <%# 1. Verificamos se o 'crud' (o registro) foi encontrado %>
+    <div class="container mt-5">
+        <h2 class="mb-4">Editar Registro</h2>
+
         <% if (crud) { %>
-
-            <%# 2. Usamos 'crud' diretamente, sem loop (.forEach) %>
             <form action="/edit/<%= crud._id %>" method="POST">
-                <input type="text" value="<%= crud.name %>" name="name">
-                <input type="text" value="<%= crud.surname %>" name="surname">
-                <br/>
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" value="<%= crud.name %>" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="surname" value="<%= crud.surname %>" name="surname">
+                </div>
+                
                 <br/>
                 
-                <%# 3. Corrigi o botão "Todos" para ser um link normal %>
-                <a href="/show">Ver Todos</a>
-                <button type="submit">Editar</button>
+                <button type="submit" class="btn btn-success">Salvar Edição</button>
+                <a href="/show" class="btn btn-secondary">Cancelar (Ver Todos)</a>
             </form>
-
         <% } else { %>
-            <%# Caso o ID não exista no banco %>
             <p>Registro não encontrado.</p>
-            <a href="/show">Voltar para a lista</a>
+            <a href="/show" class="btn btn-primary">Voltar para a lista</a>
         <% } %>
+    </div>
 
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
 </html>
