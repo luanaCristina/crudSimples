@@ -23,3 +23,7 @@ button {
 body{
     background-color: #7f479b;
 }
+
+.spacer {
+    height: 20px; /* Ajuste o valor conforme a necessidade */
+}
