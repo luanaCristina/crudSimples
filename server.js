@@ -23,14 +23,21 @@ app.use('/css', express.static(__dirname +'public/css'))
 app.use('/js', express.static(__dirname +'public/js'))
 app.use('/img', express.static(__dirname +'public/img'))
 
+//para rodar localhost - na nossa máquina
+// app.listen(3001, function(){
+//     console.log("o nosso servidor está rodando na porta 3001")
+// })
 
-app.listen(3001, function(){
-    console.log("o nosso servidor está rodando na porta 3001")
-})
+//para rodar no Render.com ou local
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
 
 app.get("/ler", (requisition, resposta)=> {
     resposta.send("olá gente!")
 })
+
 
 app.get("/emmet", (req, res) => {
     res.render("indexEmmet.ejs")
